@@ -5,7 +5,7 @@ import { MdOutlineDelete } from "react-icons/md";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 // import cardImg from "../../../images/1.png";
-const CoffeeCard = ({ coffee, coffees, setCoffees }) => {
+const CoffeeCard = ({ coffee }) => {
    // console.log(coffee);
    const { _id, url, name, chef } = coffee;
 
@@ -27,14 +27,13 @@ const CoffeeCard = ({ coffee, coffees, setCoffees }) => {
                .then((data) => {
                   console.log(data);
 
-                  if (data.deletedCount > 0) {
+                  if (data.deletedCount > 1) {
                      Swal.fire({
                         title: "Delete!",
                         text: "Your coffee has been deleted.",
                         icon: "success",
                      });
-                     const remaining = coffees.filter((cof) => cof._id !== _id);
-                     setCoffees(remaining);
+                    
                   }
                });
          }

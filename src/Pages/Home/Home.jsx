@@ -5,7 +5,7 @@ import icon4 from "../../../images/icons/4.png";
 import { RiCupLine } from "react-icons/ri";
 import { Link, useLoaderData } from "react-router-dom";
 import CoffeeCard from "../AddCoffee/CoffeeCard";
-import { useState } from "react";
+// import { useState } from "react";
 // import cardImg2 from "../../../images/2.png";
 // import cardImg3 from "../../../images/3.png";
 // import cardImg4 from "../../../images/4.png";
@@ -14,7 +14,8 @@ import { useState } from "react";
 
 const Home = () => {
    const mongoData = useLoaderData();
-   const [coffees, setCoffees] = useState(mongoData);
+   console.log(mongoData);
+   // const [coffees, setCoffees] = useState(mongoData);
 
    return (
       <div>
@@ -71,8 +72,7 @@ const Home = () => {
                   <CoffeeCard
                    key={user._id} 
                   coffee={user}
-                  coffees={coffees}
-                  setCoffees={setCoffees}
+                 
                   ></CoffeeCard>
                ))}
             </div>
